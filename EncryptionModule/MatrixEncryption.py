@@ -35,7 +35,7 @@ class MatrixEncryption(EncryptionInterface):
         :param character: character to be converted to binary code
         :return: a vector of length 16 represents the binary encoding of the given character
         """
-        bin_str = bin(int(binascii.hexlify(character.encode()), 16)) \
+        bin_str = bin(ord(character)) \
             .replace('b', '')
         bin_vec = [0.0] * (16 - len(bin_str)) + [float(c) for c in bin_str]
         return bin_vec

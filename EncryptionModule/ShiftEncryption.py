@@ -7,7 +7,7 @@ class ShiftEncryption(EncryptionInterface):
     def __init__(self, shift_cnt=3):
         """
         Constructor of ShiftEncryption algorithm.
-        :param shift_cnt: the count of characters to be applied in the shift for encrypting the coming string
+        :param shift_cnt: the count of characters to be applied in the shift for encrypting the input string
         """
         super().__init__()
         self.name = 'Shift Algorithm'  # name of current algorithm to be used in cmd tool
@@ -17,7 +17,7 @@ class ShiftEncryption(EncryptionInterface):
 
     def encrypt(self, string_to_be_encrypted):
         """
-        applies the shift encryption algorithm for the given string and returns the encrypted string
+        applies the shift encryption algorithm for the given string by shift_cnt and returns the encrypted string
         :param string_to_be_encrypted: the input string to apply the shift encryption method on it
         :return: an encrypted string
         """

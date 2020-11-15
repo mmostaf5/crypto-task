@@ -3,7 +3,7 @@ import abc
 
 class EncryptionInterface(metaclass=abc.ABCMeta):
     """
-    Encryption Interface class. All other encyption algorithms should be inherited from this interface
+    Encryption Interface class. All other encryption algorithms should be inherited from this interface
     and implement the encrypt method
     """
 
@@ -17,7 +17,7 @@ class EncryptionInterface(metaclass=abc.ABCMeta):
     def encrypt(self, string_to_be_encrypted):
         """
          applies the required encryption for the given string and returns the encrypted string
-        :param string_to_be_encrypted: the input string to apply the shift encryption method on it
+        :param string_to_be_encrypted: the input string to apply the encryption method on it
         :return: an encrypted string
         """
         pass
