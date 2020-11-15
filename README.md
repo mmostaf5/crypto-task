@@ -5,8 +5,10 @@ this repo has an implementation of 3 Encryption methdos and thier decryption met
     For Example: 'ABC123' would result in an encrypted string 'DEF456'
   2-Matrix Algorithm:
     works on the binary representation of each character of the given string, it works by multiply the binary representaion by a matrix so it should result in a sequence of float numbers.
+  3-Reverse Algorithm:
+	reverse the given string.
 # How to use:
-download the code and run 'python3 main.py str_to_be_processed -M algorithm_name[Shift,Matrix] Encrypt/Decrypt'.
+download the code and run 'python3 main.py str_to_be_processed -M algorithm_name[Shift,Matrix,Reverse] [Encrypt/Decrypt]'.
 
 for example to run shift algorithm on 'hello world!' -> 'python3 main.py hello world! -M Shift Encrypt'
 and to decrypt the result 'python3 main.py khoor zruog! -M Shift Decrypt'.

@@ -1,5 +1,5 @@
 from EncryptionModule.MatrixEncryption import MatrixEncryption
-from EncryptionModule.Config import MatrixEncyrptionConfig
+from Config import MatrixEncyrptionConfig
 import unittest
 
 

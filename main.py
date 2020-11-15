@@ -2,9 +2,11 @@ import sys
 
 from EncryptionModule.ShiftEncryption import ShiftEncryption
 from EncryptionModule.MatrixEncryption import MatrixEncryption
-from EncryptionModule import Config
+import Config
 from DecryptModule.ShiftDecryption import ShiftDecryption
 from DecryptModule.MatrixDecryption import MatrixDecryption
+from EncryptionModule.ReverseEncryption import ReverseEncryption
+from DecryptModule.ReverseDecryption import ReverseDecryption
 
 
 def convert_matrix_to_string(mat):
@@ -28,17 +30,24 @@ def convert_string_to_matrix(string):
 def main():
     shift_encryption_obj = ShiftEncryption(shift_cnt=Config.ShiftEncryptionConfig["shift_cnt"])
     matrix_encryption_obj = MatrixEncryption(encryption_matrix=Config.MatrixEncyrptionConfig["encryption_matrix"])
+    reverse_encryption_obj = ReverseEncryption(
+        reverse_encode_post_url=Config.RevereseEncryptionConfig["reverse_encode_post_url"])
     # Dictionary mapping each module with its name for ease of accessing modules
     encryption_modules = {
         shift_encryption_obj.name: shift_encryption_obj,
-        matrix_encryption_obj.name: matrix_encryption_obj}
+        matrix_encryption_obj.name: matrix_encryption_obj,
+        reverse_encryption_obj.name: reverse_encryption_obj
+    }
 
     shift_decryption_obj = ShiftDecryption(shift_cnt=Config.ShiftEncryptionConfig["shift_cnt"])
     matrix_decryption_obj = MatrixDecryption(decryption_matrix=Config.MatrixDecryptionConfig["decryption_matrix"])
+    reverse_decryption_obj = ReverseDecryption(
+        reverse_decode_post_url=Config.RevereseDecryptionConfig["reverse_decode_post_url"])
     # Dictionary mapping each module with its name for ease of accessing modules
     decryption_modules = {
         shift_decryption_obj.name: shift_decryption_obj,
-        matrix_decryption_obj.name: matrix_decryption_obj
+        matrix_decryption_obj.name: matrix_decryption_obj,
+        reverse_decryption_obj.name:reverse_decryption_obj
     }
     args = sys.argv[1:]
     try:
@@ -61,7 +70,6 @@ def main():
         print(res)
     except:
         print('invalid input!')
-
 
 
 main()
