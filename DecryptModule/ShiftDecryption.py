@@ -9,10 +9,11 @@ class ShiftDecryption(DecryptionInterface):
         Constructor of ShiftDecryption algorithm.
         :param shift_cnt: the count of characters to be applied in the shift for decrypting the input string
         """
-        self.name = 'Shift Decryption'
+        self.name = 'Shift'
         self.shift_cnt = shift_cnt
         self.lower_chars = 'abcdefghijklmnopqrstuvwxyz'  # acts as a local array for lower case letters
         self.upper_chars = self.lower_chars.upper()  # acts as a local array for upper case letters
+        self.numbers = '0123456789'
 
     def decrypt(self, string_to_be_decrypted):
         """
@@ -28,6 +29,9 @@ class ShiftDecryption(DecryptionInterface):
             elif character in self.upper_chars:
                 decrypted_str += self.upper_chars[
                     (self.upper_chars.find(character) - self.shift_cnt) % len(self.upper_chars)]
+            elif character in self.numbers:
+                decrypted_str += self.numbers[
+                    (self.numbers.find(character) - self.shift_cnt) % len(self.numbers)]
             else:
                 decrypted_str += character
         return decrypted_str

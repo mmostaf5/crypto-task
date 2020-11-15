@@ -10,10 +10,11 @@ class ShiftEncryption(EncryptionInterface):
         :param shift_cnt: the count of characters to be applied in the shift for encrypting the input string
         """
         super().__init__()
-        self.name = 'Shift Algorithm'  # name of current algorithm to be used in cmd tool
+        self.name = 'Shift'  # name of current algorithm to be used in cmd tool
         self.shift_cnt = shift_cnt
         self.lower_chars = 'abcdefghijklmnopqrstuvwxyz'  # acts as a local array for lower case letters
         self.upper_chars = self.lower_chars.upper()  # acts as a local array for upper case letters
+        self.numbers='0123456789'
 
     def encrypt(self, string_to_be_encrypted):
         """
@@ -29,6 +30,9 @@ class ShiftEncryption(EncryptionInterface):
             elif character in self.upper_chars:
                 encrypted_str += self.upper_chars[
                     (self.upper_chars.find(character) + self.shift_cnt) % len(self.upper_chars)]
+            elif character in self.numbers:
+                encrypted_str += self.numbers[
+                    (self.numbers.find(character) + self.shift_cnt) % len(self.numbers)]
             else:
                 encrypted_str += character
         return encrypted_str

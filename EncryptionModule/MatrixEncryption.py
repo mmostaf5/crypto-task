@@ -13,7 +13,7 @@ class MatrixEncryption(EncryptionInterface):
         :param encryption_matrix: a 16x16 matrix to be used at encrypting characters
         """
         super().__init__()
-        self.name = 'Matrix Encryption'  # name of current algorithm to be used in cmd tool
+        self.name = 'Matrix'  # name of current algorithm to be used in cmd tool
         self.encryption_matrix = encryption_matrix
 
     def encrypt(self, string_to_be_encrypted):

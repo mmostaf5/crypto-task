@@ -12,7 +12,7 @@ class MatrixDecryption(DecryptionInterface):
         :param decryption_matrix: a 16x16 matrix to be used at decrypting characters
         """
         super().__init__()
-        self.name = 'Matrix Decryption'  # name of current algorithm to be used in cmd tool
+        self.name = 'Matrix'  # name of current algorithm to be used in cmd tool
         self.decryption_matrix = decryption_matrix
 
     def decrypt(self, matrix_to_be_decrypted):
