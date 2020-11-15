@@ -105,3 +105,9 @@ MatrixDecryptionConfig = {
                               , -0.061510980613705, 0.172726336659603, 0.223722169457708, -0.120402896064248]]
 
 }
+RevereseEncryptionConfig={
+    'reverse_encode_post_url':'http://backendtask.robustastudio.com/encode'
+}
+RevereseDecryptionConfig={
+    'reverse_decode_post_url':' http://backendtask.robustastudio.com/decode'
+}
