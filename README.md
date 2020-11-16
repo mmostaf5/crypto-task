@@ -45,5 +45,5 @@ and to decrypt the result 'python3 main.py khoor zruog! -M Shift Decrypt'.
   If any wrong argument is passed the system will stop and raise 'invalid input' error.
   
 # Docker Image:
-	Also there is a docker image available here https://hub.docker.com/repository/docker/mmostaf5/crypto-task, to use it run the command 'docker run --rm crypto-app str_to_be_processed -M [Shift/Matrix/Reverse] [Encrypt/Decrypt]
+	Also there is a docker image available here https://hub.docker.com/repository/docker/mmostaf5/crypto-task, to use it run the command 'docker run --rm mmostaf5/crypto-task str_to_be_processed -M [Shift/Matrix/Reverse] [Encrypt/Decrypt]
 
